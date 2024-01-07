@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './App.css';
-
+import M4rkBello from  './images/m4rk.png'
 
 const App = () => {
 
@@ -22,20 +22,26 @@ const App = () => {
         try{
             setResult(eval(result).toString());
         } catch(err){
-            setResult("ERROR!");
+            setResult("DILI MAKWENTA!");
         }
    
     }
 
   return (
 
+        <>
+        <div className='pic'>
+        <img src={M4rkBello} className='gwapoKO'/>
+        </div>
+    
          <div className="container">
+            
        <form>
             <input type="text" value={result} />
        </form>
-
+      
        <div className="keypad">
-            <button className='highlight' onClick={clear} id="clear">Clear</button>
+            <button className='highlight' onClick={clear} id="clear" title="Cleared!">Clear</button>
             <button className='highlight' onClick={backspace} id="backspace">C</button>
             <button className='highlight' name="/" onClick={handleClick}>&divide;</button>
             <button name="7" onClick={handleClick}>7</button>
@@ -52,10 +58,12 @@ const App = () => {
             <button className='highlight' name="+" onClick={handleClick}>+</button>
             <button name="0" onClick={handleClick}>0</button>
             <button className='highlight' name="." onClick={handleClick}>.</button>
-            <button className='highlight' onClick={calculate} id="result">=</button>
+            <button className='highlight' onClick={calculate} id="result" title="No calculation">=</button>
        </div>
     </div>
+    <p className='footer'>ReactJS&CSS Calculator by M4rk Bello | Alright Reserve @2024</p>
 
+</>
    
     
   )
